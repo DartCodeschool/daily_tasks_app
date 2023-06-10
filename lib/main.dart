@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'package:sing/getStarted_page.dart';
-import 'getStarted_page.dart';
-import 'singUp_page.dart';
-import 'singIn_page.dart';
+import 'Pages/get_started_page.dart';
+import 'Pages/sing_up_page.dart';
+import 'Pages/sing_in_page.dart';
 
 void main() {
   runApp(
@@ -11,13 +11,13 @@ void main() {
       initialRoute: 'getStarted_page',
       routes: {
         'getStarted_page': (context) {
-          return GetStarted_page();
+          return const GetStartedPage();
         },
         'singUp_page': (context) {
-          return SingUp_page();
+          return const SingUpPage();
         },
         'singIn_page': (context) {
-          return SingIn_page();
+          return const SingInPage();
         }
       },
     ),
