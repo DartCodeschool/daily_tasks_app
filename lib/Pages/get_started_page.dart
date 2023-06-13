@@ -44,8 +44,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
               ),
               child: const Text('Get Started', style: TextStyle(fontSize: 24)),
             ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
