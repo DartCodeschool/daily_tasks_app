@@ -27,7 +27,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 78, top: 30),
-            child: Text(bodyText, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+            child: Text(bodyText, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color.fromARGB(127, 0, 0, 0))),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30, top: 60),
@@ -37,11 +37,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
               },
               style: const ButtonStyle(
                 minimumSize: MaterialStatePropertyAll(Size(320, 50)),
-                maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
+                // maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
                 backgroundColor: MaterialStatePropertyAll(Colors.blue),
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100)))),
               ),
-              child: const Text('Get Started', style: TextStyle(fontSize: 25)),
+              child: const Text('Get Started', style: TextStyle(fontSize: 24)),
             ),
           ),
         ],
