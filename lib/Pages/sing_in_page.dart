@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SingInPage extends StatefulWidget {
   const SingInPage({super.key});
 
@@ -16,96 +15,79 @@ class _SingInPageState extends State<SingInPage> {
       child: Scaffold(
         backgroundColor: const Color(0xFFF0F0F0),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assents/shape.png', height: 160, width: 230, fit: BoxFit.fitWidth),
-            const Padding(
-              padding: EdgeInsets.only(left: 81, top: 40),
-              child: Text('Welcome Back!', textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, fontFamily: 'roboto')),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 94, top: 20),
-              child: Image.asset('assents/Slice 2.png', height: 200, width: 200),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 45),
-              height: 40,
-              width: 285,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(52)),
-              ),
-              child: Padding(
-                padding: EdgeInsets.only(left: 12, top: 13, bottom: 13, right: 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text('Enter your e-mail', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.grey),),
-                    Switch(
-                    value: iswitch, 
-                    onChanged: (value){
-                      setState(() {
-                        iswitch = value;
-                      });
-                    },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 30,),
-            Container(
-              margin: EdgeInsets.only(left: 45),
-              height: 40,
-              width: 285,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(52)),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 12, top: 13, bottom: 13),
-                child: Text('Enter your password', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.grey),),
-              ),
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, 'forget_password');
-                  }, 
-                  child: const Text('Forgot your password?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color.fromARGB(255, 0, 142, 195)),)),
+                Image.asset('assents/shape.png', width: 200),
               ],
             ),
+            const SizedBox(height: 30),
+            const Text('Welcome Back!', textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, fontFamily: 'roboto')),
+            //const SizedBox(height: 36),
+            Image.asset('assents/Slice 2.png', height: 200, width: 200),
+            const SizedBox(height: 36),
+            const Rectangle(txt: 'Enter your e-mail'),
+            const SizedBox(height: 30),
+            const Rectangle(txt: 'Enter your password'),
+            const SizedBox(height: 10),
+            const Text('Forgot your password? ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC3))),
             Padding(
-              padding: const EdgeInsets.only(left: 15, top: 40),
+              padding: const EdgeInsets.only(left: 30, top: 60),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, 'singIn_page');
+                },
                 style: const ButtonStyle(
                   minimumSize: MaterialStatePropertyAll(Size(325, 56)),
                   maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                  backgroundColor: MaterialStatePropertyAll(Color(0xFF008EC3)),
                   shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100)))),
                 ),
                 child: const Text('Sing In', style: TextStyle(fontSize: 24)),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 2),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Don’t have an account?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400,),),
-                  SizedBox(width: 2),
-                  TextButton(
-                  onPressed: (){
-                    Navigator.pushNamed(context, 'singUp_page');
-                  }, 
-                  child: Text('Sign In!', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color.fromARGB(255, 0, 142, 195)),)),
-                ],
-              ),
-            ),
+            const SizedBox(height: 10),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Already have Account ?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                Text(
+                  ' Sign In!',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC4)),
+                )
+              ],
+            )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Rectangle extends StatelessWidget {
+  final String txt;
+
+  const Rectangle({
+    super.key,
+    required this.txt,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(left: 20),
+      width: 285,
+      height: 40,
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(52))),
+      child: TextField(
+        decoration: InputDecoration(
+          fillColor: Colors.white,
+          hintText: txt,
+          hintStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Colors.grey),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(52),
+          ),
         ),
       ),
     );

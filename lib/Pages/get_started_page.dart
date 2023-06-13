@@ -1,6 +1,7 @@
+import 'package:daily_tasks_app/constant.dart';
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+// import '../constant.dart';
 
 class GetStartedPage extends StatefulWidget {
   const GetStartedPage({super.key});
@@ -43,8 +44,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
               ),
               child: const Text('Get Started', style: TextStyle(fontSize: 24)),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
