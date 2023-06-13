@@ -17,7 +17,7 @@ class _SingUpPageState extends State<SingUpPage> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset('assents/shape.png', height: 200, width: 270, fit: BoxFit.fitWidth),
+            Image.asset('assents/shape.png', height: 160, width: 230, fit: BoxFit.fitWidth),
             const Padding(
               padding: EdgeInsets.only(left: 81, top: 40),
               child: Text('Welcome Onboard!', textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, fontFamily: 'roboto')),
