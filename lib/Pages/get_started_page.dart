@@ -1,6 +1,7 @@
+import 'package:daily_tasks_app/constant.dart';
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+// import '../constant.dart';
 
 class GetStartedPage extends StatefulWidget {
   const GetStartedPage({super.key});
@@ -12,39 +13,39 @@ class GetStartedPage extends StatefulWidget {
 class _GetStartedPageState extends State<GetStartedPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset('assents/shape.png', height: 200, width: 270, fit: BoxFit.fitWidth),
-          Padding(
-            padding: const EdgeInsets.only(left: 94, top: 20),
-            child: Image.asset('assents/rasm.png', height: 200, width: 200),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 81, top: 50),
-            child: Text('Get things done with Todo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 78, top: 30),
-            child: Text(bodyText, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30, top: 60),
-            child: ElevatedButton(
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Image.asset(
+                  'assents/shape.png',
+                  width: 200,
+                ),
+              ],
+            ),
+            Image.asset('assents/rasm.png', height: 200, width: 200),
+            const SizedBox(height: 53),
+            const Text('Get things done with Todo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Color(0xFF3F3D56))),
+            const SizedBox(height: 30),
+            Text(bodyText, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color.fromARGB(127, 0, 0, 0))),
+            const SizedBox(height: 60),
+            ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'singUp_page');
               },
               style: const ButtonStyle(
                 minimumSize: MaterialStatePropertyAll(Size(320, 50)),
                 maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
-                backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                backgroundColor: MaterialStatePropertyAll(Color(0xFF008EC3)),
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100)))),
               ),
               child: const Text('Get Started', style: TextStyle(fontSize: 25)),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -15,27 +15,34 @@ class _SingUpPageState extends State<SingUpPage> {
       child: Scaffold(
         backgroundColor: const Color(0xFFF0F0F0),
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assents/shape.png', height: 200, width: 270, fit: BoxFit.fitWidth),
-            const Padding(
-              padding: EdgeInsets.only(left: 81, top: 40),
-              child: Text('Welcome Onboard!', textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, fontFamily: 'roboto')),
+            Row(
+              children: [
+                Image.asset(
+                  'assents/shape.png',
+                  width: 200,
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 74, top: 25),
-              child: Text(bodyText2, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
-            ),
+            const Text('Welcome Onboard!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                )),
             const SizedBox(height: 40),
+            Text(bodyText2, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 50),
             const Rectangle(txt: 'Enter your name'),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const Rectangle(txt: 'Enter you e-mail'),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const Rectangle(txt: 'Enter your password'),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const Rectangle(txt: 'Confirm your password'),
             Padding(
-              padding: const EdgeInsets.only(left: 30, top: 40),
+              padding: const EdgeInsets.only(left: 30, top: 60),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, 'singIn_page');
@@ -43,7 +50,7 @@ class _SingUpPageState extends State<SingUpPage> {
                 style: const ButtonStyle(
                   minimumSize: MaterialStatePropertyAll(Size(325, 56)),
                   maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.blue),
+                  backgroundColor: MaterialStatePropertyAll(Color(0xFF008EC3)),
                   shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(100)))),
                 ),
                 child: const Text('Sing Up', style: TextStyle(fontSize: 24)),
@@ -52,7 +59,13 @@ class _SingUpPageState extends State<SingUpPage> {
             const SizedBox(height: 10),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Text('Already have Account ?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)), Text(' Sign In!', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.blue))],
+              children: [
+                Text('Already have Account ?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                Text(
+                  ' Sign In!',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC4)),
+                )
+              ],
             )
           ],
         ),
@@ -72,19 +85,18 @@ class Rectangle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 45),
+      margin: const EdgeInsets.only(left: 20),
       width: 285,
       height: 40,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(52)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 9, bottom: 10),
-        child: Row(
-          children: [
-            Text(txt, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.grey)),
-          ],
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(52))),
+      child: TextField(
+        decoration: InputDecoration(
+          fillColor: Colors.white,
+          hintText: txt,
+          hintStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Colors.grey),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(52),
+          ),
         ),
       ),
     );
