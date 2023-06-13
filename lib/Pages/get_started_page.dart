@@ -16,7 +16,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset('assents/shape.png', height: 200, width: 270, fit: BoxFit.fitWidth),
+          Image.asset('assents/shape.png', height: 160, width: 230, fit: BoxFit.fitWidth),
           Padding(
             padding: const EdgeInsets.only(left: 94, top: 20),
             child: Image.asset('assents/rasm.png', height: 200, width: 200),
