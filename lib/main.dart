@@ -20,7 +20,7 @@ void main() {
           return const SingInPage();
         },
         'forget_password':(context) {
-          return const Forget_password();
+          return const ForgetPassword();
         }
       },
     ),

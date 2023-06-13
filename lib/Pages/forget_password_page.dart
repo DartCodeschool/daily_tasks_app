@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Forget_password extends StatefulWidget {
-  const Forget_password({super.key});
+class ForgetPassword extends StatefulWidget {
+  const ForgetPassword({super.key});
 
   @override
-  State<Forget_password> createState() => _Forget_passwordState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _Forget_passwordState extends State<Forget_password> {
+class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,7 +17,7 @@ class _Forget_passwordState extends State<Forget_password> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset('assents/shape.png', height: 160, width: 230, fit: BoxFit.fitWidth,),
-            Text('Forgot your password?', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Color.fromARGB(255, 63, 61, 86)),),
+            const Text('Forgot your password?', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Color.fromARGB(255, 63, 61, 86)),),
           ],
         ),
       ),
