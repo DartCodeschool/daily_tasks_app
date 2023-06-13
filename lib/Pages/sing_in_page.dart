@@ -8,6 +8,7 @@ class SingInPage extends StatefulWidget {
 }
 
 class _SingInPageState extends State<SingInPage> {
+  bool iswitch = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
