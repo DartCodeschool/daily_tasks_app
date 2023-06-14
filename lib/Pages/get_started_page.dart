@@ -19,19 +19,19 @@ class _GetStartedPageState extends State<GetStartedPage> {
         children: [
           Image.asset('assents/shape.png', height: 160, width: 230, fit: BoxFit.fitWidth),
           Padding(
-            padding: const EdgeInsets.only(left: 94, top: 20),
+            padding: const EdgeInsets.only(left: 87, top: 20),
             child: Image.asset('assents/rasm.png', height: 200, width: 200),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 81, top: 50),
+            padding: EdgeInsets.only(left: 78, top: 50),
             child: Text('Get things done with Todo', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 78, top: 30),
+            padding: const EdgeInsets.only(left: 73, top: 30),
             child: Text(bodyText, textAlign: TextAlign.center, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Color.fromARGB(127, 0, 0, 0))),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, top: 60),
+            padding: const EdgeInsets.only(left: 20, top: 60),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, 'singUp_page');

@@ -1,3 +1,4 @@
+import 'package:daily_tasks_app/Pages/daily_task.dart';
 import 'package:flutter/material.dart';
 import 'Pages/get_started_page.dart';
 import 'Pages/sing_up_page.dart';
@@ -21,6 +22,9 @@ void main() {
         },
         'forget_password':(context) {
           return const ForgetPassword();
+        },
+        'daily_tasks':(context) {
+          return const DailyTask();
         }
       },
     ),
