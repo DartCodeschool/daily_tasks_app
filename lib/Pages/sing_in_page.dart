@@ -31,7 +31,13 @@ class _SingInPageState extends State<SingInPage> {
             const SizedBox(height: 30),
             const Rectangle(txt: 'Enter your password'),
             const SizedBox(height: 10),
-            const Text('Forgot your password? ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC3))),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, 'forget_password_page');
+              },
+              child: const Text('Forgot your password? ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC3))),
+            ),
+
             Padding(
               padding: const EdgeInsets.only(left: 30, top: 60),
               child: ElevatedButton(

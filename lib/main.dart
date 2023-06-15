@@ -3,6 +3,7 @@ import 'Pages/get_started_page.dart';
 import 'Pages/sing_up_page.dart';
 import 'Pages/sing_in_page.dart';
 import 'Pages/forget_password_page.dart';
+import 'Pages/resent_password_page.dart';
 
 void main() {
   runApp(
@@ -19,8 +20,11 @@ void main() {
         'singIn_page': (context) {
           return const SingInPage();
         },
-        'forget_password':(context) {
+        'forget_password': (context) {
           return const ForgetPassword();
+        },
+        'resent_password': (context) {
+          return const RessentPassword();
         }
       },
     ),
