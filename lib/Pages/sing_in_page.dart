@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/sign_in_page_widgets.dart';
+
 class SingInPage extends StatefulWidget {
   const SingInPage({super.key});
 
@@ -33,7 +35,7 @@ class _SingInPageState extends State<SingInPage> {
             const SizedBox(height: 10),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'forget_password_page');
+                Navigator.pushNamed(context, 'forget_password');
               },
               child: const Text('Forgot your password? ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC3))),
             ),
@@ -65,35 +67,6 @@ class _SingInPageState extends State<SingInPage> {
               ],
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Rectangle extends StatelessWidget {
-  final String txt;
-
-  const Rectangle({
-    super.key,
-    required this.txt,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 20),
-      width: 285,
-      height: 40,
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(52))),
-      child: TextField(
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          hintText: txt,
-          hintStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Colors.grey),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(52),
-          ),
         ),
       ),
     );

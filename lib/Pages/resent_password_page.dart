@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../widgets/resent_password_widgets.dart';
 //import 'package:flutter_svg/svg.dart';
 
 class RessentPassword extends StatefulWidget {
@@ -71,64 +73,9 @@ class _RessentPasswordState extends State<RessentPassword> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Color(0xFF6A6A6B)),
             ),
           ),
-          Rectangle(),
+          const Rectangle(),
         ]),
       ),
     );
-  }
-}
-
-class Rectangle extends StatefulWidget {
-  const Rectangle({super.key});
-
-  @override
-  State<Rectangle> createState() => _RectangleState();
-}
-
-class _RectangleState extends State<Rectangle> {
-  bool ans = false;
-  void f(value) {
-    setState(() {
-      ans = !ans;
-    });
-  }
-
-  Widget func(
-    String txt,
-  ) {
-    return CheckboxListTile(
-      controlAffinity: ListTileControlAffinity.leading,
-      side: BorderSide(width: 1),
-      title: Text(txt, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF6A6A6B))),
-      value: ans,
-      onChanged: (v) {
-        setState(() {
-          ans = v!;
-        });
-      },
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 310,
-        width: 340,
-        margin: const EdgeInsets.only(left: 25, top: 10),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: Colors.white),
-        child: Padding(
-          padding: EdgeInsets.only(top: 10, left: 15),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text(
-              'Daily Tasks',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF6A6A6B)),
-            ),
-            func('Learn how to make mobile UI by 11am  '),
-            func('Search how is UX works by 2pm'),
-            func('Do your sport by 6pm'),
-            func('Have lunch by 9pm'),
-            func('Go to sleep by 1am')
-          ]),
-        ));
   }
 }
