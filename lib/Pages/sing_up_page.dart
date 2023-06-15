@@ -44,9 +44,7 @@ class _SingUpPageState extends State<SingUpPage> {
             Padding(
               padding: const EdgeInsets.only(left: 30, top: 60),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'singIn_page');
-                },
+                onPressed: () {},
                 style: const ButtonStyle(
                   minimumSize: MaterialStatePropertyAll(Size(325, 56)),
                   maximumSize: MaterialStatePropertyAll(Size(325.0, 56.0)),
@@ -57,13 +55,18 @@ class _SingUpPageState extends State<SingUpPage> {
               ),
             ),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Already have Account ?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
-                Text(
-                  ' Sign In!',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC4)),
+                const Text('Already have Account ?', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'singIn_page');
+                  },
+                  child: const Text(
+                    ' Sign In!',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF008EC4)),
+                  ),
                 )
               ],
             )
