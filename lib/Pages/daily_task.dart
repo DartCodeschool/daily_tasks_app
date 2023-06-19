@@ -55,7 +55,7 @@ class _DailyTaskState extends State<DailyTask> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset('assents/Ellipse.svg'),
+                    Image.asset('assents/clock.png'),
                     const SizedBox(width: 15,),
                     const Padding(
                       padding: EdgeInsets.only(bottom: 80),
@@ -77,9 +77,9 @@ class _DailyTaskState extends State<DailyTask> {
                     color: Color(0xFFFFFFFF),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 21, top: 28, right: 21),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,6 +93,17 @@ class _DailyTaskState extends State<DailyTask> {
                           ],
                         ),
                       ),
+                      Expanded(
+                        child: ListView(
+                          children: const [
+                            ListTasks(txt: 'Learn how to make mobile UI by 11am  '),
+                            ListTasks(txt: 'Search how is UX works by 2pm '),
+                            ListTasks(txt: 'Do your sport by 6pm'),
+                            ListTasks(txt: 'Have lunch by 9pm'),
+                            ListTasks(txt: 'Go to sleep by 1am'),
+                          ],
+                        ),
+                        ),
                     ],
                   ),
                 ),
@@ -106,35 +117,35 @@ class _DailyTaskState extends State<DailyTask> {
   }
 }
 
-// class ListTasks extends StatefulWidget {
-//   final String matn;
+class ListTasks extends StatefulWidget {
+    final String txt;
 
-//   const ListTasks({
-//     super.key,
-//     required this.matn,
-//     });
+    const ListTasks({
+      super.key,
+      required this.txt,
+      });
 
-//   @override
-//   State<ListTasks> createState() => _ListTasksState();
-// }
+    @override
+    State<ListTasks> createState() => _ListTasksState();
+  }
 
-// class _ListTasksState extends State<ListTasks> {
-//   bool chek = false;
+  class _ListTasksState extends State<ListTasks> {
+    bool chek = false;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       children: [
-//         Checkbox(
-//           value: chek, 
-//           onChanged: (value1) {
-//             setState(() {
-//               value1 != chek;
-//             });
-//          },
-//         ),
-//         Text('matn', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xFF848484)),)
-//       ],
-//     );
-//   }
-// }
+    @override
+    Widget build(BuildContext context) {
+      return Row(
+        children: [
+          Checkbox(
+            value: chek, 
+            onChanged: (value1) {
+              setState(() {
+                chek = value1!;
+              });
+           },
+          ),
+          Text(widget.txt, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xFF848484)),),
+        ],
+      );
+    }
+  }
